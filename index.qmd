@@ -1,5 +1,5 @@
 ---
-title: "My Product Management Portfolio"
+title: "Weston Judd - Product Management Portfolio"
 ---
 
 ::: {.hero-banner .text-center}
