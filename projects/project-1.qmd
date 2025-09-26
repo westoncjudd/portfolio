@@ -43,27 +43,29 @@ The primary purpose of this app is to:
 
 ## Technical Details
 
-Framework/Stack:\
-- Frontend: Streamlit\
-- Backend: Python 3.11+\
-- Database / Storage: Local JSON files (homework_data.json, courses_data.json)\
-- Architecture: Single-page app with sidebar input, tabbed homework views, and JSON CRUD operations\
+**Framework/Stack:**
 
-Deployment:\
-- GitHub Pages + Streamlit\
+- Frontend: Streamlit
+- Backend: Python 3.11+
+- Database / Storage: Local JSON files (homework_data.json, courses_data.json)
+- Architecture: Single-page app with sidebar input, tabbed homework views, and JSON CRUD operations
+
+**Deployment:**
+
+- GitHub Pages + Streamlit
 - Streamlit Community Cloud
 
-Tools Used:\
-- Claude Code\
-- Streamlit \
+**Tools Used:**
+
+- Claude Code
+- Streamlit
 - Github
 
 ## Product Requirements Document
 
-Product: \
-Homework To-Do List App\
-Platform: Streamlit (Python 3.13+) \
-Data Storage: JSON (homework_data.json + courses_data.json or merged schema)
+**Product:** Homework To-Do List App
+**Platform:** Streamlit (Python 3.13+)
+**Data Storage:** JSON (homework_data.json + courses_data.json or merged schema)
 
 📖 1. Overview
 
