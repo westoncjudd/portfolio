@@ -19,7 +19,7 @@ The primary purpose of this app is to:
 <div class="d-flex justify-content-center gap-3 my-4">
   <!-- Open App button -->
   <a class="btn btn-primary d-inline-flex align-items-center"
-     href="https://tetris-game-egc6.vercel.app/"
+     href="https://homework-to-do.streamlit.app/"
      target="_blank" rel="noopener"
      aria-label="Open live app">
     <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
@@ -28,7 +28,7 @@ The primary purpose of this app is to:
 
   <!-- GitHub Source button -->
   <a class="btn btn-outline-dark d-inline-flex align-items-center"
-     href="https://github.com/your-user/your-repo"
+     href="https://github.com/westoncjudd/Homework-To-Do-App"
      target="_blank" rel="noopener"
      aria-label="Open GitHub source">
     <i class="fa-brands fa-github me-2" aria-hidden="true"></i>
@@ -36,20 +36,144 @@ The primary purpose of this app is to:
   </a>
 </div>
 
-<iframe src="https://tetris-game-egc6.vercel.app/"
+<iframe src="https://homework-to-do.streamlit.app/"
         style="width:100%; height:900px; border:none;"
         allowfullscreen>
 </iframe>
 
 ## Technical Details
 
-Framework/Stack: [e.g., React, Quarto, HTML/CSS/JS]
+Framework/Stack:
+- Frontend: Streamlit
+- Backend: Python 3.11+
+- Database / Storage: Local JSON files (homework_data.json, courses_data.json)
+- Architecture: Single-page app with sidebar input, tabbed homework views, and JSON CRUD operations
 
-Deployment: GitHub Pages + Vercel
+Deployment:
+- GitHub Pages + Streamlit
+- Streamlit Community Cloud
 
 Tools Used:
--   Claude Code
+- Claude Code
+- Streamlit 
+- Github
 
 ## Product Requirements Document
 
-Paste in the PRD that you submitted to Claude Code
+Product: Homework To-Do List App Platform: Streamlit (Python 3.13+) Data Storage: JSON (homework_data.json + courses_data.json or merged schema)
+
+📖 1. Overview
+
+The Homework To-Do List App helps students manage assignments with due dates, priorities, and completion tracking. It currently supports assignment CRUD operations, quick stats, due date alerts, and JSON persistence.
+
+The next release introduces Course Management, allowing users to:
+
+Add new courses by name and optional metadata.
+
+Edit existing course details.
+
+Remove courses no longer needed.
+
+Assign homework items to courses for better organization.
+
+🎯 2. Goals & Objectives
+
+Improve usability by grouping assignments by course.
+
+Allow students to manage dynamic course lists without editing JSON manually.
+
+Ensure minimal disruption to existing homework workflows.
+
+👩‍💻 3. User Stories Homework Management (Existing)
+
+As a student, I want to add homework with title, due date, priority, and description so I can track assignments.
+
+As a student, I want to mark homework complete or delete it to stay organized.
+
+Course Management (New)
+
+Add Course: As a student, I want to type in a course name and create it so I can assign homework to that course.
+
+Edit Course: As a student, I want to rename or update course details so I can keep course info accurate.
+
+Delete Course: As a student, I want to remove a course when it is no longer relevant so I don’t clutter my view.
+
+Assign Homework to Course: As a student, I want to select a course when adding homework so my assignments are grouped logically.
+
+View by Course: As a student, I want to filter homework lists by course so I can focus on one class at a time.
+
+⚙️ 4. Functional Requirements 4.1 Course Management
+
+Add Course:
+
+Input field for course_name (required).
+
+Optional fields: instructor_name, semester, notes.
+
+Persist to JSON (courses_data.json or as a new array in homework_data.json).
+
+Edit Course:
+
+Ability to select a course and update its details.
+
+Reflect changes immediately across all linked assignments.
+
+Delete Course:
+
+Ability to remove a course.
+
+Option A: Cascade delete all assignments linked to it.
+
+Option B (default): Leave assignments unlinked (fallback course = “Unassigned”).
+
+Link to Homework:
+
+Modify the homework add form to include a dropdown of active courses.
+
+Store course_id along with assignment data.
+
+4.2 UI/UX Updates
+
+Sidebar: Add Course Management Section with:
+
+Input to add new course.
+
+List of courses with edit/delete buttons.
+
+Homework Tabs: Add filter by course (dropdown at top of each tab).
+
+Stats Panel: Show breakdown by course in addition to priority.
+
+4.3 Data Schema Updates Courses { "id": 1, "name": "Math 101", "instructor": "Dr. Smith", "semester": "Fall 2025", "notes": "Calculus I" }
+
+Homework (modified) { "id": 12, "title": "Problem Set 3", "subject": "Homework", "course_id": 1, "due_date": "2025-10-15", "priority": "High", "description": "Chapters 2–3", "completed": false, "created_at": "2025-09-25T14:32:00Z", "completed_at": null }
+
+🔒 5. Non-Functional Requirements
+
+Data Integrity: Changes to course names must update linked homework consistently.
+
+Error Handling: Prevent duplicate course names, confirm before deletion.
+
+Performance: Must handle up to 200 courses and 1000 assignments without slowdown.
+
+Backup: Same automatic JSON backup/recovery as homework.
+
+🚀 6. Future Enhancements (Nice-to-Have)
+
+Course color coding for easier visual grouping.
+
+Import/export course lists.
+
+Sync with external systems (Canvas, Blackboard, etc.).
+
+📆 7. Milestones
+
+Phase 1: JSON schema update + database functions for CRUD courses.
+
+Phase 2: Streamlit UI for course add/edit/delete.
+
+Phase 3: Integrate course dropdown in homework form.
+
+Phase 4: Add course filters + updated stats.
+
+Phase 5: Testing (unit + manual QA).
