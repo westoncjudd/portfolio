@@ -1,17 +1,18 @@
 ---
-title: "Name of the application I have published for Homework 1"
-date: "2024-09-15"
+title: "Homework To-Do App"
+date: "2025-09-25"
 categories: [GitHub, Vercel, Claude Code]
 ---
 
 ## Overview
 
-This project involved using Claude Code to write the code to needed to deveop an app that ...
+This project involved using Claude Code to write the code needed to deveop an app that simply logs and tracks homework assignments. 
 
 The primary purpose of this app is to:
 
-- ....
-- ....
+- Have a customized interface that lets users to log and sort assigments by course. 
+- Provide the option to change the status of an assigment and mark progress to help keep students organized. 
+- Be easily accessible from mobile or desktop to help the user edit and change homework at any time. 
 
 ## Live Product Demo
 
